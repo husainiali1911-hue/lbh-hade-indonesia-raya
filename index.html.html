@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hade Indonesia Raya — Lembaga Bantuan Hukum</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #ffffff; /* dominan */
+      --primary: #c8102e; /* merah utama */
+      --accent: #8b0b18; /* merah gelap untuk hover */
+      --dark: #0b0b0b; /* hitam */
+      --muted: #6b6b6b;
+      --surface: #f6f6f6;
+      --radius: 12px;
+      --max-width: 1100px;
+      --container-pad: 20px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color-scheme: light;
+    }
+
+    /* Reset */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--dark);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      font-size:16px;
+    }
+
+    /* Layout */
+    .wrap{max-width:var(--max-width);margin:0 auto;padding:var(--container-pad)}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;box-shadow:0 6px 18px rgba(200,0,0,0.12)}
+    .brand h1{margin:0;font-size:18px;letter-spacing:0.2px}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--dark);text-decoration:none;font-weight:600}
+    nav a.cta{background:var(--primary);color:#fff;padding:10px 14px;border-radius:10px}
+    nav a.cta:hover{background:var(--accent)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;padding:36px 0}
+    .hero .eyebrow{display:inline-block;background:var(--surface);padding:6px 10px;border-radius:999px;font-weight:600;color:var(--primary);font-size:13px}
+    .hero h2{margin:6px 0 12px;font-size:34px;line-height:1.05}
+    .hero p{margin:0 0 18px;color:var(--muted);max-width:54ch}
+    .hero .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn.primary{background:var(--primary);color:#fff}
+    .btn.ghost{background:transparent;border:2px solid var(--primary);color:var(--primary)}
+
+    /* Feature cards */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(10,10,10,0.06);border:1px solid #eee}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Cases and CTA strip */
+    .cases{margin-top:32px;display:grid;grid-template-columns:1fr 420px;gap:24px}
+    .case-list{display:flex;flex-direction:column;gap:12px}
+    .case{background:var(--surface);padding:14px;border-radius:10px}
+    .aside-cta{background:linear-gradient(180deg,#fff 0%, #fff 30%),linear-gradient(90deg,rgba(200,16,46,0.06),transparent);padding:20px;border-radius:12px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+
+    /* Contact */
+    .contact{margin-top:32px;background:#fff;padding:22px;border-radius:12px;border:1px solid #eee}
+    .contact form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .input,textarea{padding:12px;border-radius:8px;border:1px solid #ddd;font-size:14px}
+    textarea{grid-column:1/3;min-height:120px}
+
+    footer{margin-top:36px;padding:28px 0;border-top:1px solid #f0f0f0;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .services{grid-template-columns:repeat(2,1fr)}
+      .cases{grid-template-columns:1fr}
+      .case-list{order:2}
+      .aside-cta{order:1}
+    }
+    @media (max-width:600px){
+      nav{display:none}
+      header{padding:12px 0}
+      .hero h2{font-size:26px}
+      .services{grid-template-columns:1fr}
+      .card{padding:14px}
+      .contact form{grid-template-columns:1fr}
+      textarea{grid-column:auto}
+    }
+
+    /* Small utility */
+    .muted{color:var(--muted)}
+    .small{font-size:13px}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="brand">
+      <div class="logo">HIR</div>
+      <div>
+        <h1>Hade Indonesia Raya</h1>
+        <div class="small muted">Lembaga Bantuan Hukum — Indonesia</div>
+      </div>
+    </div>
+
+    <nav aria-label="Navigasi utama">
+      <a href="#about">Tentang</a>
+      <a href="#services">Layanan</a>
+      <a href="#cases">Kasus</a>
+      <a href="#contact">Kontak</a>
+      <a class="cta" href="#donate">Donasi</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="hero">
+      <div>
+        <span class="eyebrow">Bantuan Hukum Gratis</span>
+        <h2>Mendampingi Putusan, Melindungi Hak — Akses Keadilan untuk Semua</h2>
+        <p>Hade Indonesia Raya hadir untuk memberikan pendampingan hukum, advokasi masyarakat, dan pendidikan hukum yang mudah diakses. Kami fokus pada kasus hak asasi, pembelaan terhadap kelompok rentan, dan pendidikan legal dasar.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#contact">Minta Bantuan Sekarang</a>
+          <a class="btn ghost" href="#about">Pelajari Lebih Lanjut</a>
+        </div>
+
+        <div class="services" style="margin-top:20px" id="services">
+          <div class="card">
+            <h3>Pendampingan Kasus</h3>
+            <p>Didampingi dari langkah awal sampai persidangan — tanpa biaya untuk kelompok rentan.</p>
+          </div>
+          <div class="card">
+            <h3>Advokasi Kebijakan</h3>
+            <p>Bekerja sama dengan komunitas dan pembuat kebijakan untuk memperbaiki akses keadilan.</p>
+          </div>
+          <div class="card">
+            <h3>Pendidikan Hukum</h3>
+            <p>Workshop, modul singkat, dan materi digital untuk pemahaman hak dasar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cases" id="cases">
+      <div class="case-list">
+        <h3>Kasus Terkini</h3>
+        <div class="case">
+          <strong>Kasus A:</strong> Pembelaan hak akses pendidikan untuk anak usia sekolah.
+        </div>
+        <div class="case">
+          <strong>Kasus B:</strong> Advokasi penanganan tindakan diskriminasi di instansi publik.
+        </div>
+        <div class="case">
+          <strong>Kasus C:</strong> Pendampingan korban penggusuran tanpa proses hukum yang jelas.
+        </div>
+      </div>
+
+      <aside class="aside-cta">
+        <h3>Butuh Bantuan Hukum?</h3>
+        <p class="muted">Isi formulir kontak atau hubungi kami langsung untuk penanganan cepat.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <a href="#contact" class="btn primary">Minta Bantuan</a>
+          <a href="#donate" class="btn ghost">Dukung Kami</a>
+        </div>
+      </aside>
+    </section>
+
+    <section class="contact" id="contact">
+      <h3>Kontak & Formulir</h3>
+      <p class="muted small">Silakan isi detail kasus singkat — tim kami akan menindaklanjuti.</p>
+      <form>
+        <input class="input" type="text" placeholder="Nama lengkap" required>
+        <input class="input" type="text" placeholder="No. Telp / WhatsApp" required>
+        <input class="input" type="text" placeholder="Ringkasan singkat kasus" required>
+        <input class="input" type="text" placeholder="Lokasi (kota/provinsi)" required>
+        <textarea placeholder="Detail lebih lengkap (opsional)"></textarea>
+        <button type="submit" class="btn primary">Kirim Permintaan</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>
+        <strong>Hade Indonesia Raya</strong>
+        <div class="small muted">Alamat kantor cabang: Jalan Kasuari, Galaxy Raya</div>
+      </div>
+      <div class="small muted">© 2025 Hade Indonesia Raya — Semua hak dilindungi</div>
+    </div>
+  </footer>
+
+</body>
+</html>
